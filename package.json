@@ -1,0 +1,27 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build && npm run build:scanner",
+        "dev": "vite",
+        "build:scanner": "node resources/js/build-scanner.mjs",
+        "test:scanner": "node --test tests/js/receiving-scanner.test.js",
+        "test:lookup": "node --test tests/js/book-lookup.test.js",
+        "test": "node --test tests/js/*.test.js"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^10.0.3",
+        "esbuild": "0.28.2",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.0",
+        "vite": "^8.0.0"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.1"
+    },
+    "dependencies": {
+        "html5-qrcode": "2.3.8"
+    }
+}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wise Owl · Scanning proof</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#193b34;background:#f4f1e9}*{box-sizing:border-box}body{margin:0}main{max-width:600px;margin:40px auto;padding:0 20px 40px}header{display:flex;align-items:center;gap:12px;margin-bottom:40px}.mark{background:#193b34;color:white;border-radius:12px;padding:12px;font-weight:750}small{display:block;color:#53675f}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:700}h1{font-size:clamp(36px,8vw,50px);line-height:1.1;letter-spacing:-.04em}h2{font-size:18px}p{line-height:1.6}section{background:#fffefb;border:1px solid #d9dfd5;border-radius:16px;padding:20px;margin:16px 0}#reader{min-height:120px;background:#eaf0e8;border-radius:10px;overflow:hidden;margin:16px 0}button,input{font:inherit;font-size:16px;min-height:46px;border-radius:8px;padding:10px 14px}button{background:#193b34;color:white;border:1px solid #193b34;cursor:pointer}button:disabled{opacity:.45}input{width:100%;border:1px solid #b9c7b5;margin:8px 0 12px}label{font-size:14px}.secondary{color:#193b34;background:white}#status{font-size:14px}aside,footer{font-size:12px;color:#53675f;line-height:1.7;margin-top:22px}li{padding:8px 0;font-size:14px}a{color:inherit}:focus-visible{outline:3px solid #b57e2f;outline-offset:3px}[hidden]{display:none!important}
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script defer src="isbn.js"></script><script defer src="scanner.js"></script>
+</head>
+<body><main>
+<header><span class="mark" aria-hidden="true">WO</span><div><strong>Wise Owl</strong><small>Phase 1 · Camera experiment</small></div></header>
+<p class="eyebrow">IDENTIFY A BOOK</p><h1>Scan. Check.<br>Ready for the next.</h1><p>Test ISBN scanning before we build the intake workspace.</p>
+<section><h2>Camera scan</h2><div id="reader"></div><button id="start" type="button">Start camera</button> <button id="stop" class="secondary" type="button" disabled>Stop</button><p id="status" role="status" aria-live="polite">Camera starts only when you tap. Keep the full barcode visible.</p></section>
+<section><h2>Take a barcode photo</h2><p>Use this on an iPhone when live scanning is unavailable over HTTP. Include the whole barcode, sharp and well lit.</p><label for="photo">Take a photo or choose an image</label><input id="photo" type="file" accept="image/*" capture="environment"><p>Photos are decoded on this device, not uploaded.</p></section>
+<section><h2>Or enter an ISBN</h2><form id="manual"><label for="isbn">ISBN-10 or ISBN-13</label><input id="isbn" autocomplete="off" spellcheck="false" placeholder="9780140328721" required><button type="submit">Check ISBN</button> <button id="example" class="secondary" type="button">Use example</button></form></section>
+<section id="result" hidden><p class="eyebrow">BARCODE RECOGNISED</p><h2 id="canonical"></h2><p id="detail"></p><p>The application will open quantity, cover, cost, price and allocation controls here. This experiment only identifies books.</p><button id="next" type="button">Scan next book</button></section>
+<section><h2>This test session</h2><p id="empty">No ISBNs checked yet.</p><ol id="history"></ol><button id="export" class="secondary" type="button" disabled>Export results</button></section>
+<aside><strong>Test data only.</strong> No stock is received. Results stay in memory until reload. Frames are decoded on-device; no catalogue requests are made. The camera decoder loads from jsDelivr and needs a connection. Manual input works without it.</aside>
+<footer>Camera testing on iPhone requires trusted HTTPS. See <a href="../../docs/scanning-proof.md">the device test sheet</a>.</footer>
+</main></body></html>

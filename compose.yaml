@@ -1,0 +1,51 @@
+name: wise-owl-stock
+
+services:
+  app:
+    build:
+      context: .
+      target: development
+    ports:
+      - "${APP_BIND_ADDRESS:-127.0.0.1}:${APP_PORT:-8000}:8000"
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_DATABASE: wise_owl
+      DB_USERNAME: wise_owl
+      DB_PASSWORD: "${DB_PASSWORD:?Set DB_PASSWORD in .env}"
+    volumes:
+      - .:/var/www/html
+      - vendor:/var/www/html/vendor
+    depends_on:
+      database:
+        condition: service_healthy
+
+  frontend:
+    image: node:24-bookworm-slim
+    profiles: [tools]
+    working_dir: /app
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - vendor:/app/vendor:ro
+    command: [npm, run, build]
+
+  database:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_DB: wise_owl
+      POSTGRES_USER: wise_owl
+      POSTGRES_PASSWORD: "${DB_PASSWORD:?Set DB_PASSWORD in .env}"
+    volumes:
+      - database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wise_owl -d wise_owl"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  vendor:
+  node_modules:
+  database:

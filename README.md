@@ -77,6 +77,7 @@ Run tests serially until per-process databases are configured. The suite include
 - [Acceptance scenarios](docs/acceptance.md)
 - [Roadmap](docs/roadmap.md)
 - [Verification](docs/verification.md)
+- [Invoice and customs planning (2026-11-01)](docs/plans/invoice-samples-2026-11-01.md) — proposals to revisit against the newer checkout on the other PC.
 - [Standalone scanner proof](docs/scanning-proof.md)
 
 The active checkout is now `C:/Users/Benjamin Smith/Repositories/Codex`. It was copied with local Git history from the original Documents workspace; the original was left untouched. The origin remote is https://github.com/BenjaminBot/wiseowl-stock.git. Container setup is for development; production hosting remains deferred.

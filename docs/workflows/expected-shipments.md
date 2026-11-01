@@ -2,6 +2,8 @@
 
 Agreed direction, 2026-10-28. Planned only; CSV import and invoice-based confirmation are not implemented yet.
 
+The [2026-11-01 invoice analysis and proposals](../plans/invoice-samples-2026-11-01.md) examine real supplier formats and customs relationships. They are planning input for the newer application checkout on another PC, not an approved replacement for this workflow or a claim about that checkout's implementation status.
+
 ## One receiving flow, two entry points
 
 Staff can either scan/search a product during ordinary intake or select a pre-entered/imported invoice line and choose Confirm receipt. The invoice route opens the same receiving form and uses the same posting operation. It preselects the product and expected quantity/cost details, avoiding retyping and removing any requirement to scan the same item just to identify it again.

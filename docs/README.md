@@ -19,6 +19,14 @@ Read in this order:
 
 The root [AGENTS.md](../AGENTS.md) governs implementation conventions. Update these documents as behaviour is implemented; keep plans and verified implementation clearly distinguished.
 
+## Invoice and customs planning, 2026-11-01
+
+The user has a newer application checkout on another PC. These are analysis and potential solutions for review there; they do not change current application behaviour or approve an implementation design.
+
+- [Invoice sample analysis](plans/invoice-samples-2026-11-01.md) — evidence, format differences, reconciliation and links to the supplied customs sheets.
+- [Purchasing tax and customs options](plans/purchasing-tax-customs.md) — supplier VAT, import VAT, duty, currency and landed-cost proposals.
+- [Invoice import and arrival-confirmation plan](plans/invoice-imports.md) — review workflow, supplier adapters, expected arrivals, stages and acceptance ideas.
+
 - [Integrated receiving scanner](scanning.md) — current application behaviour and build/device checks.
 
 - [Online ISBN metadata and cover selection](book-lookup.md) — current workflow, providers and limitations.
